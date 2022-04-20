@@ -1,0 +1,171 @@
+version: "2.0"
+
+intents:
+  - greet
+  - buy_a_home
+  - sell_your_home
+  
+
+responses:
+  utter_greet:
+  - text: "Hello,
+          Greetings ! Thanks for launching the Real-Estate Bot. How can I help you today?"
+    buttons:
+    - title: "Buy A Home"
+      payload: '/buy_a_home'
+    - title: "Sell Your Home"
+      payload: '/sell_your_home'      
+  utter_ask_address: 
+    
+  - text: "Thanks for letting me know. Can I get the address for the property? For example 123 Main street."
+  utter_ask_bathrooms:
+  - text: "Cool. How many bathrooms are you looking for?"
+  utter_ask_bedrooms:
+  - text: "Ok. How many bedrooms are you looking for?"
+  utter_ask_city:
+  - text: "Ok. What city that in?"
+  utter_ask_cost:
+  - text: "Great! How much are you comfortable spending on your new home?" 
+    buttons:
+    - title: 10k
+      payload: 10k
+
+    - title: 20k
+      payload: 20k 
+    - title: 30k
+      payload: 30k  
+  utter_ask_country:
+  - text: "Oh Great! Which part of the country are you looking for?"
+  utter_ask_email:
+  - text: "What email address can we use to contact you back?"
+  utter_ask_months:
+  - text: "When are you looking to buy?" 
+    buttons:
+     - title: "In 0 to 3 Months"
+       payload: "In 0 to 3 Months"
+     - title: "In 3 to 6 Months"
+       payload: "In 3 to 6 Months"
+     - title: "In 6 to 9 Months"
+       payload: "In 6 to 9 Months" 
+  utter_ask_phone_number:
+  - text: "Please provide your best contact number, so one of our experts can contact you"
+  utter_ask_property_type:
+  - text: "What property type are you interested in?" 
+    buttons: 
+    - title: Condos
+      payload: Condos
+    - title: Attached
+      payload: Attached
+    - title: Dettached   
+      payload: Dettached   
+         
+  utter_ask_time_to_sell:
+  - text: In order to provide you with valuation can you please let me know when you looking to sell your home?"
+    buttons:
+    -  title: ASAP
+       payload: ASAP
+    -  title: "3-6 Months"
+       payload: "3-6 Months"
+    -  title: "6+ Months" 
+       payload: "6+ Months"
+         
+           
+         
+           
+  utter_ask_zipcode:
+  - text: "Almost finished! What is the zip code for the property?"
+  utter_submit_buy: 
+  - text: "Good. One of our agents will be in touch with you shortly."
+
+# actions: 
+# - action_buyhome   
+
+
+
+  
+      
+
+
+
+
+
+
+
+
+
+
+slots: 
+  address: 
+    auto_fill: false
+    type: text
+  bathrooms: 
+    auto_fill: false
+    type: text
+  bedrooms: 
+    auto_fill: false
+    type: text
+  city: 
+    auto_fill: false
+    type: text
+  cost: 
+    auto_fill: false
+    type: text
+  country: 
+    auto_fill: false
+    type: text
+  email: 
+    auto_fill: false
+    type: text
+  months: 
+    auto_fill: false
+    type: text
+  phone_number: 
+    auto_fill: false
+    type: text
+  property_type: 
+    auto_fill: false
+    type: text
+  time_to_sell: 
+    auto_fill: false
+    type: text
+  zipcode: 
+    auto_fill: false
+    type: text  
+forms:
+  buy_form:
+    country:
+      
+    - type: from_text
+    cost:
+      
+    - type: from_text
+    bedrooms:
+    - type: from_text
+    bathrooms:
+    - type: from_text
+    months:
+    - type: from_text
+    property_type:
+    - type: from_text
+    email:
+    - type: from_text
+  sell_form:
+    time_to_sell:
+    - type: from_text
+    address:
+    - type: from_text
+    city:
+    - type: from_text
+    zipcode:
+    - type: from_text
+    email:
+    - type: from_text
+    phone_number:
+    - type: from_text
+      
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,34 @@
+version: "2.0"
+
+rules:
+
+# - rule: buy home
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: buy_a_home
+#   - action: buy_form
+#   - active_loop: buy_form
+# - rule: Submit buy Form
+#   condition:
+#   - active_loop: buy_form
+#   steps:
+#   - action: buy_form
+#   - active_loop: null
+- rule:  Sell Form
+  steps:
+  - intent: sell_your_home
+  - action: sell_form
+  - active_loop: sell_form  
+- rule: Submit Sell Form
+  condition:
+  - active_loop: sell_form
+  steps:
+  - action: sell_form
+  - active_loop: null  
+
+  
+  
+
+
+

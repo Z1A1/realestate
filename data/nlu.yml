@@ -1,0 +1,33 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: buy_a_home
+  examples: |
+    - Buy A Home
+    - buy a home
+    - buy  home
+    - Buy Home
+  
+
+- intent: sell_your_home
+  examples: |
+    - Sell Your Home
+    - sell your home
+    - sell  home
+    - Sell  Home
